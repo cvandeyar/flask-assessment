@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Melons</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+
+<!-- Create a div for every Most Loved Melon using a Jinja for loop -->
+    <div class='melon-div'>
+      <!--   <h3>Texas Golden Watermelon</h3>
+        <h2>Loved 598 times.</h2>
+        <img src='http://www.rareseeds.com/assets/1/14/DimThumbnail/Texas-Golden-2-Watermelon-web.jpg'> -->
+
+        <ul>
+            {% for key in melon_list %}
+                {% for key2 in melon_list[key] %}
+
+                     {% if key2 == 'name' %}
+                        <div><h3>{{ melon_list[key][key2] }}</h3></div>
+                    {% endif %}
+                    {% if key2 == 'num_loves' %}
+                        <div>Loved {{ melon_list[key][key2] }} times</div>
+                    {% endif %}
+                    {% if key2 == 'img' %}
+                        <div><img src={{ melon_list[key][key2] }}></div>
+                    {% endif %}
+
+                {% endfor %}
+                <br><br>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+
+</body>
+</html>
