@@ -3,29 +3,22 @@
 <head>
     <link rel="stylesheet"
           href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/flask/static/style.css">
     <title>Most Loved Melons</title>
 </head>
 
-<body>
-
-<div class="site-wrapper">
-    <div class="site-wrapper-inner">
-
-        <img src="/static/img/ubermelon-logo.png">
-
-        <h1>Ubermelon.</h1>
-
-        <p class="lead">Melons when you want them.</p>
-
-        <a href="/melons" class="btn btn-lg btn-primary">Shop Now</a>
-
-    </div>
-</div>
+<body id="page-background">
+<header><h1>UberMelon’s Most Loved Melons</h1></header>
 
     <div>
-        This is the home page.
+        <img src='http://www.rareseeds.com/assets/1/14/DimThumbnail/Sugar-Baby-Watermelon-web.jpg'>
     </div>
+
+    <form action="/get-name" name="person" method="GET">
+        <br>
+        Enter Name: <input type="text" name="firstname" required>
+        <input type="submit" value="Submit">
+    </form>
 
 
 </body>

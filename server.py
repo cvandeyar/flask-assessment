@@ -36,12 +36,26 @@ MOST_LOVED_MELONS = {
 
 # YOUR ROUTES GO HERE
 
-@app.route("/top-melons")
-def homepage():
+@app.route("/")
+def home_page():
+    """shows the homepage"""
 
-    # melon_list = list(MOST_LOVED_MELONS.keys())
+    return render_template("homepage.html")
+
+@app.route("/top-melons")
+def top_melons():
+    """shows all of the most loved melons"""
 
     return render_template("top-melons.html", melon_list=MOST_LOVED_MELONS)
+
+@app.route("/get-name")
+def get_name():
+    """gets person name from home page"""
+
+    username = request.args.get("person")
+    session["user"] = username
+
+    return redirect("/top-melons", session["user"])
 
 
 if __name__ == "__main__":

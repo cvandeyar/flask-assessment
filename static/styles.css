@@ -8,3 +8,7 @@ img {
     padding: 10px;
     width: 205px;
 }
+
+#page-background {
+    background-color: yellow;
+}
